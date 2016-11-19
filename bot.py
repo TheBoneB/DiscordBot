@@ -26,6 +26,10 @@ credit = "**DisCord Bot v0.1**\nMade by *TheBoneB* using __*discord.py*__"
 #main part:
 async def delmsg(message):
     await client.delete_message(message)
+   
+@client.event
+async def on_ready():
+    print("Running as {}".format(client.user.name))
 
 @client.event
 async def on_message(message):
