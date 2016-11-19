@@ -9,27 +9,32 @@ client = discord.Client()
 #login data:
 mail = 'mymail@domain.com'
 passw = 'password'
+
 #startup
-def logmein():
-    client.login(mail, passw)
+async def logmein():
+    await client.login(mail, passw)
+    
 def logmeout():
-    client.logout()
-def initiate():
-    client.run()
-logmein()
+    await client.logout()
+    
+def initiate(mail, pass):
+    client.run(mail, pass)
+
 #variables:
 credit = "**DisCord Bot v0.1**\nMade by *TheBoneB* using __*discord.py*__"
+
 #main part:
-def delmsg(message):
-    client.delete_message(message)
+async def delmsg(message):
+    await client.delete_message(message)
 
 @client.event
-def on_message(message):
+async def on_message(message):
     try:
         if message.content.startswith("!hello"):
-            client.send_message(message.channel, "Hey!")
+            await client.send_message(message.channel, "Hey!")
         elif message.content.startswith("!credit"):
-            client.send_message(message.channel, credit)
+            await client.send_message(message.channel, credit)
+            
     except discord.InvalidArgument:
         print("Error -3 : InvalidArgument")
     except discord.ClientException:
@@ -38,8 +43,8 @@ def on_message(message):
         print("Error -2 : HTTPException")
 
 @client.event
-def on_member_join(member):
+async def on_member_join(member):
     server = member.server
-    client.send_message(server,"Welcome @{}".format(member.mention()))
+    await client.send_message(server, "Welcome, {}".format(member.mention))
 
-initiate()
+initiate(mail, pass)
