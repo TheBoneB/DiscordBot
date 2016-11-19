@@ -30,6 +30,12 @@ async def delmsg(message):
 @client.event
 async def on_ready():
     print("Running as {}".format(client.user.name))
+    
+    # Sends the message
+    server = discord.utils.find(lambda n: n.name == "Team Šiptar Mafija", client.servers)
+    channel = discord.utils.find(lambda n: n.name == "general", server.channels)
+    
+    await client.send_message(channel, "Ayy lmao :alien:")
 
 @client.event
 async def on_message(message):
