@@ -14,7 +14,7 @@ passw = 'password'
 async def logmein():
     await client.login(mail, passw)
     
-def logmeout():
+async def logmeout():
     await client.logout()
     
 def initiate(mail, pass):
