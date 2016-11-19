@@ -6,20 +6,19 @@
 - Author: "TheBoneB"
 
 ###### A simple BOT for the DisCord app, created in python using the discord.py API
-----------------------------------------------------------------------------
+---
 ### Basic Features:
 
 - Greeting new-joined Members to the server
 - Ping-Pong
 - Says Hi
 
--------------------------------------------------------------------------------
+---
 ### Planed Features:
 
 - [ ] Admin list
-- [ ] Changeable prefix
+- [ ] ~~Changeable prefix~~
 - [ ] Custom Commands
 - [ ] And many more... ;)
 
----------------------------------------------------------------------------------
-
+---
